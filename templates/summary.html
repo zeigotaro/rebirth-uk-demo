@@ -1,0 +1,77 @@
+<!doctype html>
+<head>
+    <link href="static/css/form.css" rel="stylesheet">
+    <script type="text/javascript">
+        var address = {{ data.address|tojson }};
+        var name = {{ data.name|tojson }};
+        var insurance = {{ data.insurance|tojson }};
+    </script>
+</head>
+<body>
+    {% if data.insurance == 'false' %}
+    <h1>Listing Confirmed</h1>
+    <br />
+    <br />
+    <text>Hi {{data.name}},</text><br /> 
+    <text>Your listing for {{ data.address}} is confirmed!</text><br />
+    <text>You elected to list without insurance. Note that many municipalities require some form of insurance. Feel free to update your preferences at any time.</text>
+    {% else %}
+    <h1 id="header">Thanks for choosing Lloyd's HomeShare Protection</h1>
+    <h2 id="subHeader">Here's your policy information</h2>
+    <br />
+    <div id="policyInfo">
+        <div id="greeting">
+            <p>
+                Hi {{data.name}},
+            </p>
+            <p>
+                    Thanks for protecting your upcoming Home
+                    Sharing plans with us. More than 35 million U.S.
+                    customers trust Lloyd’s HomeShare Protection
+                    each year — so host your home confidently
+                    knowing you're in good company. 
+            </p>
+            <p>
+                    We've attached your policy document to this
+                    email as a PDF, which includes your Letter of
+                    Confirmation or Declaration of Coverage and
+                    Certificate of Insurance/Policy.
+            </p>
+        </div>
+        <div id="details">
+            <label>About Your New Policy</label>
+            <br />
+            <br />
+            <label>Policy:</label>
+            <br />
+            <text>Host Home Protector</text>
+            <br />
+            <br />
+            <label>Address:</label>
+            <br />
+            <text>{{ data.address }}</text>
+            <br />
+            <br />
+            <label>Policy No.:</label>
+            <br />
+            <text>USA2345678901</text>
+            <br />
+            <br />
+            <label>Purchase Date:</label>
+            <br />
+            <text>May 11, 2018</text>
+            <br />
+            <br />
+            <label>Effective Date:</label>
+            <br />
+            <text>June 12, 2018</text>
+            <br />
+            <br />
+            <label>Hosting Dates:</label>
+            <br />
+            <text>June 12, 2018 – June 14, 2018</text>
+            <br />
+        </div>
+    </div>
+    {% endif %}
+</body>

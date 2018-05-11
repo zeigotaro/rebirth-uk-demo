@@ -1,3 +1,63 @@
+<!doctype html>
+<head>
+    <link href="static/css/form.css" rel="stylesheet">
+</head>
 <body>
-    <h1>Address Input Form</h1>
+    <h1>Host Your Home</h1>
+    <div id="homeInfoInput">
+        <br />
+        <label for="applicantName">Name: </label>
+        <input type="text" id="applicantName" value="George P. Burdell">
+        <br />
+        <label for="streetAddress">Address: </label>
+        <input type="text" id="streetAddress" value="123 Main Street, Atlanta GA 30309 USA" width="200">
+        <br />
+        <label for="homeType">Home Type: </label>
+        <select id="homeType">
+            <option value="Home">Home</option>
+            <option value="Condo">Condo</option>
+            <option value="Apartment">Apartment</option>
+        </select>
+        <br />
+        <label for="numberBedrooms">Number of Bedrooms: </label>
+        <select id="numberBedrooms">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4+</option>
+        </select>
+        <br />
+        <label for="numberBathrooms">Number of Bathrooms: </label>
+        <select id="numberBathrooms">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4+</option>
+        </select>
+        <br />
+        <br />
+        <label for="amenities">Amenities: </label>
+            <br />
+            <input type="checkbox" name="amenityList" id="am01">
+            <label for "am01">Free Wifi</label>
+            <br />
+            <input type="checkbox" name="amenityList" id="am02">
+            <label for "am02">Heat/Air Conditioning</label>
+            <br />
+            <input type="checkbox" name="amenityList" id="am03">
+            <label for "am03">TV</label>
+            <br />
+        <br />
+        <label for="numberGuests">Number of Guests Allowed: </label>
+        <select id="numberGuests">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5+</option>
+        </select>
+        <br />
+        <br />
+        <input id="submit_btn" type="submit" value="Next ->" onclick="window.location.assign('/insurance?address=' + document.getElementById('streetAddress').value + '&name=' + document.getElementById('applicantName').value);">
+        <br />
+    </div> 
 </body>
