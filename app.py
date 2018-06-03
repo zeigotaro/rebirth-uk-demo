@@ -1,8 +1,10 @@
 from flask import Flask, render_template, jsonify, request
 import json
 import random
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 renter_list = []
 host_list = []
 
